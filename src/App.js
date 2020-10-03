@@ -2,10 +2,8 @@ import React from 'react';
 import Buttons from './components/Buttons';
 import Advert from './components/Advert';
 import NewAdvert from './components/NewAdvert';
-import MyReservations from './components/MyReservations';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Operations from './components/Operations';
-
+import {Operations, MyReservations} from './components/Operations';
 
 function App() {
   return (
