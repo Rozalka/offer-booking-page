@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Advert from "./Advert";
 import Buttons from "./Buttons";
 import NewAdvert from "./NewAdvert";
+import Reservation from "./Reservation"
 
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
@@ -41,7 +42,7 @@ export const addOffer = (newOffer, callback) => {
     .catch((err) => console.log(err));
 };
 
-export const updateOffer = (id, newOffer, successCallback) => {
+export const updateOffers = (id, newOffer, successCallback) => {
   fetch(`http://localhost:3000/offers/${id}`, {
     headers: {
       "Content-Type": "application/json",
@@ -58,8 +59,16 @@ export const updateOffer = (id, newOffer, successCallback) => {
     .catch((err) => console.log(err));
 };
 
-export const removeOffer = (id, successCallback) => {
-  fetch(`http://localhost:3000/offers/${id}`, {
+const findReservation = (condition='') => {
+  return fetch (`http://localhost:3000/reservations?${condition}`)
+  .then((resp) => resp.json())
+}
+
+export const removeReservation = (offerId, successCallback) => {
+  findReservation(`offerId=${offerId}`)
+  .then(reservations => reservations.map((reservation) => reservation.id))
+  .then(x => console.log(x))
+  .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -70,8 +79,8 @@ export const removeOffer = (id, successCallback) => {
       if (data.error === false && typeof successCallback === "function") {
         successCallback();
       }
-    })
-    .catch((err) => console.log(err));
+    }))
+    .catch((err) => console.log(err))
 };
 
 const allReservations = () => {
@@ -85,23 +94,36 @@ const allReservations = () => {
 };
 
 function MyReservations() {
-  allReservations().then(reservations => reservations.map((reservation) => reservation.offerId))
-  .then(offersIds => "id=" + offersIds.join("&id="))
-  .then(parsedrOfferIds => getOffers(parsedrOfferIds))
-  .then(reservedOffers => console.log(reservedOffers))
+  
+  const [reservations, setReservations] = useState([]);
 
- 
+  useEffect(() => {
+    fetchAllReservations();
+  }, []);
+
+ const fetchAllReservations = () => {
+   allReservations()
+    .then(reservations => reservations.map((reservation) => reservation.offerId))
+    .then(offersIds => "id=" + offersIds.join("&id="))
+    .then(parsedOfferIds => getOffers(parsedOfferIds))
+    .then((reservedOffers) => setReservations(reservedOffers))
+    
+   
+ }
   return <>
-      
+      {reservations.map((reservation) => (
+        <Reservation key={reservation.id} {...reservation} />))}
+    
       </>;
 }
-const getOffers = (condition='') => {
 
+
+const getOffers = (condition='') => {
   return fetch(`http://localhost:3000/offers?${condition}`)
   .then((resp) => resp.json())
 }
 
-function Operations() {
+function Offers() {
   const [offers, setOffer] = useState([]);
 
   useEffect(() => {
@@ -109,12 +131,11 @@ function Operations() {
   }, []);
 
   const fetchAllOffers = () => {
-      getOffers()
-      .then((allOffers) => setOffer(allOffers));
+    availableOffers()
+      .then((availableOffers) => setOffer(availableOffers));
   };
   return (
     <>
-      {/* <NewAdvert addOffer={addOffer}/> */}
       {offers.map((offer) => (
         <Advert key={offer.id} {...offer} />
       ))}
@@ -122,4 +143,15 @@ function Operations() {
   );
 }
 
-export { Operations, MyReservations };
+async function  availableOffers() {
+ let offers = await getOffers()
+ let reservations = await allReservations()
+ let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
+  return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
+ }
+
+//  console.log(freeOffers)
+// }
+
+
+export { Offers, MyReservations };

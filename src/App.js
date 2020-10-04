@@ -3,7 +3,8 @@ import Buttons from './components/Buttons';
 import Advert from './components/Advert';
 import NewAdvert from './components/NewAdvert';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {Operations, MyReservations} from './components/Operations';
+import {Offers, MyReservations} from './components/Operations';
+import Reservation from "./components/Reservation";
 
 function App() {
   return (
@@ -14,10 +15,12 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/advert" exact component={Advert}>
-          <Operations/>
+          <Offers/>
           </Route>
           <Route path="/newAdvert" component={NewAdvert}/>
-          <Route path="/myReservations" component={MyReservations}/>
+          <Route path="/reservations" component={Reservation}/>
+          <MyReservations/>
+
         </Switch>
       </div>
     </Router>

@@ -122,6 +122,24 @@
       "price": "1",
       "status": "open",
       "id": 13
+    },
+    {
+      "person": "123",
+      "email": "ad@a.pl",
+      "offer": "1",
+      "date": "",
+      "price": "2",
+      "status": "open",
+      "id": 14
+    },
+    {
+      "person": "123",
+      "email": "ad@a.pl",
+      "offer": "1",
+      "date": "2020-10-15",
+      "price": "2",
+      "status": "open",
+      "id": 15
     }
   ]
 }
