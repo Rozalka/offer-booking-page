@@ -3,7 +3,7 @@ import React from 'react';
 import NewReservation from './NewReservation';
 import Operations from './Operations';
 
-function Advert({ id, person, email, offer, date, price}) {
+function Offer({ id, person, email, offer, date, price}) {
 
 
     return (
@@ -21,4 +21,4 @@ function Advert({ id, person, email, offer, date, price}) {
     )
 }
 
-export default Advert
+export default Offer

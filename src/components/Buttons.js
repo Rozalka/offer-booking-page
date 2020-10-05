@@ -2,18 +2,18 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 function Buttons() {
     return (
-        <div>
-            <Link to="/advert">
-                <button>Ogloszenia</button> 
+        <div className={"nav_container"}>
+            <Link to="/offer">
+                <button className={"main_btn"}>Ogloszenia</button> 
             </Link>
             <Link to="/newAdvert">
-                <button>Dodaj ogłoszenie</button>
+                <button className={"main_btn"}>Dodaj ogłoszenie</button>
             </Link>
            <Link to="/myReservations">
-                <button>Moje rezerwacje</button>
+                <button className={"main_btn"}>Moje rezerwacje</button>
            </Link>
            <Link to="/">
-                <button>Home</button>
+                <button className={"main_btn"}>Home</button>
            </Link>
            
         </div>

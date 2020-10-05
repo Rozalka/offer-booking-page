@@ -45,6 +45,15 @@
       "price": "20zł",
       "status": "open",
       "id": 16
+    },
+    {
+      "person": "",
+      "email": "",
+      "offer": "",
+      "date": "",
+      "price": "",
+      "status": "open",
+      "id": 17
     }
   ]
 }

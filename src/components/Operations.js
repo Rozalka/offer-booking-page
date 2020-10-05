@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Advert from "./Advert";
+import Advert from "./Offer";
 import Buttons from "./Buttons";
 import NewAdvert from "./NewAdvert";
 import Reservation from "./Reservation"
+import Offer from "./Offer";
 
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
@@ -156,7 +157,7 @@ function Offers() {
   return (
     <>
       {offers.map((offer) => (
-        <Advert key={offer.id} {...offer} />
+        <Offer key={offer.id} {...offer} />
       ))}
     </>
   );

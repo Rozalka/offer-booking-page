@@ -1,23 +1,26 @@
 import React from 'react';
 import Buttons from './components/Buttons';
-import Advert from './components/Advert';
+// import Advert from './components/Offer';
 import NewAdvert from './components/NewAdvert';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Offers, MyReservations} from './components/Operations';
 import Reservation from "./components/Reservation";
-import Footer from "./components/Footer"
-import app from "./components/scss/app.scss"
+import Footer from "./components/Footer";
+import scss from "./components/scss/main.scss";
+import Offer from './components/Offer';
+import dog from "./assets/dog-outline-chasing-balloons.png"
+
 
 
 function App() {
   return (
     <Router>
-      <div className={"navBar"}>
+      <div >
       
         <Buttons/>
         <Switch>
           <Route path="/" exact component={Home}/>
-          <Route path="/advert" exact component={Advert}>
+          <Route path="/offer" exact component={Offer}>
           <Offers/>
           </Route>
           <Route path="/newAdvert" component={NewAdvert}/>
@@ -33,9 +36,11 @@ function App() {
 }
 
 const Home = () => (
-  <div>
+  <div className={"main_container"}>
+    <img className={"logo"} src={dog}></img>
     <h1>Hau can we help you!</h1>
-    </div>
+    <h3>The most popular dog service booking platform in country</h3>
+  </div>
 )
 
 export default App;

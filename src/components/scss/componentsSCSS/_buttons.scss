@@ -1,0 +1,11 @@
+.nav_container {
+    background-color: $color_mint;
+    padding: 20px 0;
+    .main_btn {
+        margin: 0 5px;
+        border: none;
+        border-radius: 10px;
+        padding: 7px 12px;
+        font-family: $font-paragraphs;
+    }
+}
