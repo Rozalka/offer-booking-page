@@ -1,29 +1,6 @@
 {
-  "reservations": [
-    {
-      "offerId": 1,
-      "id": 1
-    }
-  ],
+  "reservations": [],
   "offers": [
-    {
-      "id": 1,
-      "person": "John Doe",
-      "email": "johndoe@abc.com",
-      "offer": "dog bath",
-      "date": "22.10.20",
-      "price": "100zł",
-      "status": "open"
-    },
-    {
-      "id": 2,
-      "person": "Jane Doe",
-      "email": "janedoe@abc.com",
-      "offer": "3-hours dog spa",
-      "date": "20.09.20",
-      "price": "250zł",
-      "status": "open"
-    },
     {
       "id": 3,
       "person": "Alice Doe",
@@ -32,51 +9,6 @@
       "date": "-",
       "price": "30zł",
       "status": "open"
-    },
-    {
-      "id": 4,
-      "person": "Bob Doe",
-      "email": "bobdoe@abc.com",
-      "offer": "30 min. walk twice a week",
-      "date": "since 19.10.20",
-      "price": "25zł per each",
-      "status": "open"
-    },
-    {
-      "person": "rp",
-      "email": "rp@com",
-      "offer": "weakuacja",
-      "date": "2020-09-23",
-      "price": "12zł",
-      "status": "open",
-      "id": 5
-    },
-    {
-      "person": "rozalia",
-      "email": "r@abc.com",
-      "offer": "25zł",
-      "date": "2020-10-24",
-      "price": "17zł",
-      "status": "open",
-      "id": 6
-    },
-    {
-      "person": "rozalia",
-      "email": "r@abc.com",
-      "offer": "25zł",
-      "date": "2020-10-24",
-      "price": "17zł",
-      "status": "open",
-      "id": 7
-    },
-    {
-      "person": "jola",
-      "email": "j@abc",
-      "offer": "wyprowadzeniepsa",
-      "date": "2020-10-08",
-      "price": "25zł",
-      "status": "open",
-      "id": 8
     },
     {
       "person": "rozalia",
@@ -97,42 +29,6 @@
       "id": 10
     },
     {
-      "person": "",
-      "email": "",
-      "offer": "",
-      "date": "",
-      "price": "",
-      "status": "open",
-      "id": 11
-    },
-    {
-      "person": "",
-      "email": "",
-      "offer": "",
-      "date": "",
-      "price": "",
-      "status": "open",
-      "id": 12
-    },
-    {
-      "person": "pe",
-      "email": "em@q.pl",
-      "offer": "of",
-      "date": "1992-11-11",
-      "price": "1",
-      "status": "open",
-      "id": 13
-    },
-    {
-      "person": "123",
-      "email": "ad@a.pl",
-      "offer": "1",
-      "date": "",
-      "price": "2",
-      "status": "open",
-      "id": 14
-    },
-    {
       "person": "123",
       "email": "ad@a.pl",
       "offer": "1",
@@ -140,6 +36,15 @@
       "price": "2",
       "status": "open",
       "id": 15
+    },
+    {
+      "person": "Rozalia",
+      "email": "rp@com",
+      "offer": "wyprowadzenie psa",
+      "date": "2020-10-15",
+      "price": "20zł",
+      "status": "open",
+      "id": 16
     }
   ]
 }

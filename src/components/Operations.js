@@ -6,7 +6,6 @@ import Reservation from "./Reservation"
 
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
-  console.log(reservation);
   fetch(`http://localhost:3000/reservations/`, {
     headers: {
       "Content-Type": "application/json",
@@ -59,6 +58,25 @@ export const updateOffers = (id, newOffer, successCallback) => {
     .catch((err) => console.log(err));
 };
 
+
+// export const removeOffer = (id, successCallback) => {
+//   fetch(`http://localhost:3000/offers/${id}`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     method: "DELETE"
+//   })
+//     .then(r => r.json())
+//     .then(data => {
+//       if (data.error === false && typeof successCallback === "function") {
+//         successCallback();
+//       }
+//     })
+//     .catch(err => console.log(err));
+// };
+
+
+
 const findReservation = (condition='') => {
   return fetch (`http://localhost:3000/reservations?${condition}`)
   .then((resp) => resp.json())
@@ -67,7 +85,6 @@ const findReservation = (condition='') => {
 export const removeReservation = (offerId, successCallback) => {
   findReservation(`offerId=${offerId}`)
   .then(reservations => reservations.map((reservation) => reservation.id))
-  .then(x => console.log(x))
   .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
     headers: {
       "Content-Type": "application/json",
@@ -134,6 +151,8 @@ function Offers() {
     availableOffers()
       .then((availableOffers) => setOffer(availableOffers));
   };
+
+
   return (
     <>
       {offers.map((offer) => (
@@ -147,7 +166,7 @@ async function  availableOffers() {
  let offers = await getOffers()
  let reservations = await allReservations()
  let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
-  return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
+ return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
  }
 
 //  console.log(freeOffers)

@@ -5,11 +5,14 @@ import NewAdvert from './components/NewAdvert';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {Offers, MyReservations} from './components/Operations';
 import Reservation from "./components/Reservation";
+import Footer from "./components/Footer"
+import app from "./components/scss/app.scss"
+
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className={"navBar"}>
       
         <Buttons/>
         <Switch>
@@ -23,6 +26,7 @@ function App() {
 
         </Switch>
       </div>
+      <Footer/>
     </Router>
 
   )

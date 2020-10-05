@@ -1,12 +1,13 @@
 
 import React from 'react';
 import NewReservation from './NewReservation';
+import Operations from './Operations';
 
 function Advert({ id, person, email, offer, date, price}) {
-   
+
 
     return (
-        <li>
+        <li id={id}>
             <div className="offer_box">
             <p><span>Kto?</span> {person}</p>
             <p><span>e-mail</span> {email}</p>
