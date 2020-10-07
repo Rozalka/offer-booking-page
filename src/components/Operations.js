@@ -25,8 +25,7 @@ export const addReservation = (reservation, callback) => {
 
 export const addOffer = (newOffer, callback) => {
   let body = JSON.stringify(newOffer);
-  console.log(body);
-  fetch(`http://localhost:3000/offers/`, {
+  return fetch(`http://localhost:3000/offers/`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -34,12 +33,6 @@ export const addOffer = (newOffer, callback) => {
     body: body,
   })
     .then((r) => r.json())
-    .then((data) => {
-      if (data.error === false && typeof callback === "function") {
-        callback(data.data);
-      }
-    })
-    .catch((err) => console.log(err));
 };
 
 export const updateOffers = (id, newOffer, successCallback) => {

@@ -17,7 +17,7 @@ function Offer({ id, person, email, offer, date, price}) {
                     <h3> {offer} </h3>
                         <p> {person}</p>
                         <p> {email}</p>
-                        <p>{price} </p>
+                        <p>{price} zł</p>
                         <p>{date}</p>
                         <p><span>offer status:</span> free</p>
                     </div>  

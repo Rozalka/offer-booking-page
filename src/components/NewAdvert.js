@@ -18,48 +18,59 @@ function NewAdvert({ onNewAdvert }) {
     }
   
     if (email.length < 3 || email.indexOf("@") === -1) {
-      _errors.push("Email should be valid.");
+      _errors.push("Email should shoud have '@' to be valid.");
     }
   
     if (offer.length < 10) {
       _errors.push("Message should be at least 10 characters long.");
+    }
+    if (isNaN(price)) {
+      _errors.push("price should be a number")
     }
     
     setErrors(_errors);
     setSuccess(false);
     if (_errors.length > 0) {
       return false;
-    }
+    } 
 
     const advert = {
       person: `${person}`,
       email: `${email}`,
       offer: `${offer}`,
       date: `${date}`,
-      price: `${price}`,
-      status: "open",
+      price: `${price}`
     };
 
-    addOffer(advert, onNewAdvert);
+     addOffer(advert, onNewAdvert) 
+    .then(data => {
+        
+        setPerson("");
+        setPrice("");
+        setEmail("");
+        setOffer("");
+        setDate("");
+        setSuccess(true);
+    })
   };
 
 
 
   return (
-    <div className="main_container">
+    <div className="main_container form_main_container">
         <h1 className={"new_offer"}>New Offer</h1>
         <form className={"form_container"} onSubmit={handleAddAdvert}>
           <div className="newAdvert_form">
             <input className={"form_box"}type="text" name="person" placeholder="person" value={person} onChange={(e) => setPerson(e.target.value)}/>
             <input className={"form_box"}type="text" name="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <input className={"form_box"}type="text" name="offer"placeholder="offer" value={offer} onChange={(e) => setOffer(e.target.value)}/>
-            <input className={"form_box"}type="date" name="date"placeholder="date" value={date} onChange={(e) => setDate(e.target.value)}/>
-            <input className={"form_box"}type="text" name="price"placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)}/>
-          <button className={"form_box"}type="submit">add new offer!</button>
+            <textarea className={"form_box textarea"}type="textarea" name="offer"placeholder="here write your offer" value={offer} onChange={(e) => setOffer(e.target.value)}/>
+            <input className={"form_box"}type="date" name="date"placeholder="choose the date" value={date} onChange={(e) => setDate(e.target.value)}/>
+            <input className={"form_box"}type="text" name="price"placeholder="price in zł" value={price} onChange={(e) => setPrice(e.target.value)}/>
+          <button className={"form_btn"} type="submit">add new offer!</button>
           </div>
         </form>
 
-    {success && <h2>Form sent!</h2>}
+    {success && <h2 className={"form_confirmation"}>Form sent succesfully!</h2>}
     {errors.map(error => <p key={error}>{error}</p>)}
     </div>
   );

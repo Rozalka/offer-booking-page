@@ -18,7 +18,7 @@ function Reservation({id, person, email, date, offer, price}) {
                     <p> {email}</p>
                     <p>{price} </p>
                     <p>{date}</p>
-                    <p><span>offer status:</span> free</p>
+                    <p><span>offer status:</span> reserved</p>
                 </div>  
                 <div className={"btns"}>
                 <img onClick={() => RemoveReservation(id)} className={"btn_img"} src={crossedOutTrack}></img>
