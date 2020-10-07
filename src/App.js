@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <div >
-      
         <Buttons/>
         <Switch>
           <Route path="/" exact component={Home}/>
@@ -36,10 +35,12 @@ function App() {
 }
 
 const Home = () => (
-  <div className={"main_container"}>
-    <img className={"logo"} src={dog}></img>
-    <h1>Hau can we help you!</h1>
-    <h3>The most popular dog service booking platform in country</h3>
+  <div  className={"main_container"}>
+    <div>
+      <img className={"logo"} src={dog}></img>
+      <h1>Hau can we help you!</h1>
+      <h3>The most popular dog service booking platform in country</h3>
+    </div>
   </div>
 )
 

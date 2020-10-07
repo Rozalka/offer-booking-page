@@ -60,24 +60,6 @@ export const updateOffers = (id, newOffer, successCallback) => {
 };
 
 
-// export const removeOffer = (id, successCallback) => {
-//   fetch(`http://localhost:3000/offers/${id}`, {
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     method: "DELETE"
-//   })
-//     .then(r => r.json())
-//     .then(data => {
-//       if (data.error === false && typeof successCallback === "function") {
-//         successCallback();
-//       }
-//     })
-//     .catch(err => console.log(err));
-// };
-
-
-
 const findReservation = (condition='') => {
   return fetch (`http://localhost:3000/reservations?${condition}`)
   .then((resp) => resp.json())
@@ -128,11 +110,13 @@ function MyReservations() {
     
    
  }
-  return <>
-      {reservations.map((reservation) => (
-        <Reservation key={reservation.id} {...reservation} />))}
-    
-      </>;
+  return (
+      <div className={"offers_container"}>
+        {reservations.map((reservation) => (
+        <Reservation key={reservation.id} {...reservation} />
+        ))}
+      </div>
+  );
 }
 
 
@@ -155,11 +139,11 @@ function Offers() {
 
 
   return (
-    <>
+    <div className={"offers_container"}>
       {offers.map((offer) => (
         <Offer key={offer.id} {...offer} />
       ))}
-    </>
+    </div>
   );
 }
 

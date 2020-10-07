@@ -1,11 +1,13 @@
 .footer_container {
+    height: 80px;
     background-color: $color_mint;
-    margin: 20px 0;
-    padding: 20px 0;
-
+    box-shadow: 0 0 5px $color-shadow;
+    p {
+        padding: 10px 0;
+    }
     .footer_icon {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         padding: 8px;
     }
 }

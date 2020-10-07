@@ -1,0 +1,18 @@
+.main_container {
+    .new_offer {
+        font-size: 4rem;
+    }
+    .newAdvert_form {
+        display: flex;
+        flex-direction: column;
+
+        .form_box {
+            margin: 3px 0;
+            padding: 10px;
+            min-width: 350px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 5px $color-shadow;
+        }
+    }
+}

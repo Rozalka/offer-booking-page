@@ -1,23 +1,33 @@
-
 import React from 'react';
 import NewReservation from './NewReservation';
 import Operations from './Operations';
+import dog1 from '../assets/dog (1).png';
+import checkTrack from '../assets/footprint.png';
 
 function Offer({ id, person, email, offer, date, price}) {
 
 
     return (
-        <li id={id}>
-            <div className="offer_box">
-            <p><span>Kto?</span> {person}</p>
-            <p><span>e-mail</span> {email}</p>
-            <p><span>usługa</span> {offer} <span>kiedy ją wykonam</span> {date} </p>
-            <p><span>koszt</span> {price} </p>
-            <p><span>status oferty:</span> wolna</p>
+            <li className={"list"} id={id}>
+                <div className="offer_box">
+                    <div>
+                        <img className={"offer_img"} src={dog1}></img>
+                    </div> 
+                    <div className={"offer_info"}>
+                    <h3> {offer} </h3>
+                        <p> {person}</p>
+                        <p> {email}</p>
+                        <p>{price} </p>
+                        <p>{date}</p>
+                        <p><span>offer status:</span> free</p>
+                    </div>  
+                    <div className={"btns"}>
+                        <img onClick = {() => NewReservation(id)}className={"btn_img"}src={checkTrack}></img>
+                        {/* <button className={"btn_details"}>details</button> */}
+                    </div>
 
-            <button onClick = {() => NewReservation(id)}>dodaj do moich rezerwacji</button>
-            </div>
-        </li>
+                </div>
+            </li>
     )
 }
 

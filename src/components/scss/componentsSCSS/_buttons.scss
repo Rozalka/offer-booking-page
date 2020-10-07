@@ -1,11 +1,45 @@
 .nav_container {
-    background-color: $color_mint;
-    padding: 20px 0;
+    background-color: $color-mint;
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    box-shadow: 0 0 5px $color-shadow;
+    .nav_links {
+        margin-right: 80px;
+    }
+    .home_page_link {
+        margin-left: 80px;
+        display: flex;
+        outline: none;
+        display: flex;
+        align-items: center;
+    }
     .main_btn {
-        margin: 0 5px;
+        margin: 20px 5px;
         border: none;
         border-radius: 10px;
         padding: 7px 12px;
         font-family: $font-paragraphs;
+        &:hover {
+            color: $color-on-hoover;
+            box-shadow: inset 0 0 3px $color-shadow;
+        }
+       
     }
+    a {
+        outline: none;
+
+        img {
+            width: 45px;
+            height: 45px; 
+            &:hover {
+                width: 55px;
+                height: 55px;
+                transition-delay: 0.25;
+            }
+        }
+        
+    }
+
 }

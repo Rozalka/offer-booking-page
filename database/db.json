@@ -1,46 +1,67 @@
 {
-  "reservations": [],
+  "reservations": [
+    {
+      "offerId": 9,
+      "id": 2
+    },
+    {
+      "offerId": 17,
+      "id": 3
+    },
+    {
+      "offerId": 18,
+      "id": 4
+    },
+    {
+      "offerId": 20,
+      "id": 5
+    },
+    {
+      "offerId": 19,
+      "id": 6
+    }
+  ],
   "offers": [
     {
       "id": 3,
       "person": "Alice Doe",
       "email": "alicedoe@abc.com",
       "offer": "30 min. walk",
-      "date": "-",
+      "date": "date is flexible",
       "price": "30zł",
       "status": "open"
     },
     {
-      "person": "rozalia",
-      "email": "ro@com",
-      "offer": "dddd",
+      "person": "Sam Smith",
+      "email": "ssmiith@abc.com",
+      "offer": "every week walks",
       "date": "2020-10-28",
-      "price": "25",
+      "price": "25zł per each",
       "status": "open",
       "id": 9
     },
     {
-      "person": "rozalia",
-      "email": "ro@com",
-      "offer": "dddd",
+      "person": "Jane Doe",
+      "email": "janedoe@abc.com",
+      "offer": "3h dog spa",
       "date": "2020-10-28",
-      "price": "25",
+      "price": "125zł",
       "status": "open",
       "id": 10
     },
     {
-      "person": "123",
-      "email": "ad@a.pl",
-      "offer": "1",
+      "person": "Ben Doe",
+      "email": "bdoe@abc.pl",
+      "offer": "dog training",
       "date": "2020-10-15",
-      "price": "2",
+      "price": "1200zł",
       "status": "open",
       "id": 15
     },
     {
-      "person": "Rozalia",
-      "email": "rp@com",
-      "offer": "wyprowadzenie psa",
+      "person": "John DOe",
+      "email": "jdoe@abc.com",
+      "offer": "3 hours work with a dog behaviorist",
       "date": "2020-10-15",
       "price": "20zł",
       "status": "open",
@@ -49,11 +70,65 @@
     {
       "person": "",
       "email": "",
-      "offer": "",
+      "offer": "aaaaaaaaaa",
       "date": "",
       "price": "",
       "status": "open",
       "id": 17
+    },
+    {
+      "person": "",
+      "email": "",
+      "offer": "aaaaaaaaaa",
+      "date": "",
+      "price": "",
+      "status": "open",
+      "id": 18
+    },
+    {
+      "person": "",
+      "email": "",
+      "offer": "aaaaaaaaaa",
+      "date": "",
+      "price": "",
+      "status": "open",
+      "id": 19
+    },
+    {
+      "person": "",
+      "email": "",
+      "offer": "aaaaaaaaaa",
+      "date": "",
+      "price": "",
+      "status": "open",
+      "id": 20
+    },
+    {
+      "person": "rr",
+      "email": "aaa@come",
+      "offer": "aga się poleca",
+      "date": "2020-10-07",
+      "price": "2",
+      "status": "open",
+      "id": 21
+    },
+    {
+      "person": "rr",
+      "email": "aaa@come",
+      "offer": "aga się poleca",
+      "date": "2020-10-07",
+      "price": "2",
+      "status": "open",
+      "id": 22
+    },
+    {
+      "person": "rr",
+      "email": "aaa@come",
+      "offer": "aga się poleca",
+      "date": "2020-10-07",
+      "price": "2",
+      "status": "open",
+      "id": 23
     }
   ]
 }
