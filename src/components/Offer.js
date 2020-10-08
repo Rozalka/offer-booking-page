@@ -4,6 +4,7 @@ import ShowOfferDetails from './ShowOfferDetails';
 import dog1 from '../assets/dog (1).png';
 import checkTrack from '../assets/footprint.png';
 import { Link } from 'react-router-dom';
+import { getOffers, SingleOffer,MyReservations } from './Operations';
 
 function Offer({ id, person, offer, date, price, details, email, number}) {
 
@@ -15,7 +16,7 @@ function Offer({ id, person, offer, date, price, details, email, number}) {
                     </div> 
                     <div className={"offer_single"}>
                         <div className={"offer_header"}>
-                            <Link to="/details"><h3 onClick={() => ShowOfferDetails(id)}> {offer} </h3></Link>
+                            <Link to={`details/${id}`}><h3> {offer} </h3></Link>
                             <p className={"price"}>{price} zł</p>
                         </div>
                         <div className={"offer_info"}>

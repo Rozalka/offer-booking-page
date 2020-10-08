@@ -1,14 +1,10 @@
 import React from 'react';
 import Buttons from './components/Buttons';
-// import Advert from './components/Offer';
 import NewAdvert from './components/NewAdvert';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {Offers, MyReservations} from './components/Operations';
-import Reservation from "./components/Reservation";
+import {Offers, MyReservations, SingleOffer} from './components/Operations';
 import Footer from "./components/Footer";
-import scss from "./components/scss/main.scss";
-import Offer from './components/Offer';
-import ShowOfferDetails from './components/ShowOfferDetails';
+import  "./components/scss/main.scss";
 import dog from "./assets/dog-outline-chasing-balloons.png"
 
 
@@ -23,8 +19,8 @@ function App() {
           <Route path="/offer">
           <Offers/>
           </Route>
-          <Route path="/details">
-          <ShowOfferDetails/>
+          <Route path="/details/:id" >
+          <SingleOffer/>
           </Route>
           <Route path="/newAdvert" component={NewAdvert}/>
           <MyReservations/>

@@ -4,6 +4,8 @@ import Buttons from "./Buttons";
 import NewAdvert from "./NewAdvert";
 import Reservation from "./Reservation"
 import Offer from "./Offer";
+import ShowOfferDetails from "./ShowOfferDetails";
+import { useParams } from "react-router-dom";
 
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
@@ -112,10 +114,28 @@ function MyReservations() {
   );
 }
 
-
 export const getOffers = (condition='') => {
   return fetch(`http://localhost:3000/offers?${condition}`)
   .then((resp) => resp.json())
+}
+
+function SingleOffer() {
+  const { id } = useParams()
+  const [singleOffer, setSingleOffer] = useState(0);
+  useEffect(() => {
+    fetchSingleOffer();
+  },[]);
+
+  const fetchSingleOffer =() => {
+    getOffers(`id=${id}`)
+    .then((getOffers) => setSingleOffer(getOffers));
+  }
+
+  return (
+    <div>
+     <ShowOfferDetails key={singleOffer.id} {...singleOffer} />
+    </div>
+  )
 }
 
 function Offers() {
@@ -147,8 +167,5 @@ async function  availableOffers() {
  return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
  }
 
-//  console.log(freeOffers)
-// }
 
-
-export { Offers, MyReservations };
+export { Offers, MyReservations, SingleOffer };
