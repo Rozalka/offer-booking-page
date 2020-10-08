@@ -35,7 +35,7 @@ function App() {
 const Home = () => (
   <div  className={"main_container"}>
     <div>
-      <img className={"logo"} src={dog}></img>
+      <img alt={"dog with baloons"} className={"logo"} src={dog}></img>
       <h1>Hau can we help you!</h1>
       <h3>The most popular dog service booking platform in country</h3>
     </div>

@@ -8,7 +8,7 @@ function Buttons() {
             <div className={"home_page_link"}>
                 <Link to="/">
                     <div className={"nav_logo"}>
-                        <img src={dog}></img>
+                        <img alt={"dog"}src={dog}></img>
                     </div>               
                 </Link>
            </div>
@@ -28,3 +28,5 @@ function Buttons() {
 }
 
 export default Buttons
+
+

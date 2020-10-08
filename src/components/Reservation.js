@@ -1,5 +1,4 @@
 import React from 'react';
-import Operations from "./Operations"
 import RemoveReservation from './RemoveReservation';
 import dog1 from '../assets/dog (1).png';
 import crossedOutTrack from '../assets/pets.png';
@@ -11,7 +10,7 @@ function Reservation({id, person, date, offer, price}) {
         <li className={"list"} id={id}>
         <div className="offer_box">
             <div>
-                <img className={"offer_img"} src={dog1}></img>
+                <img alt={"green dog face"}className={"offer_img"} src={dog1}></img>
             </div> 
             <div className={"offer_single"}>
                 <div className={"offer_header"}>
@@ -24,7 +23,7 @@ function Reservation({id, person, date, offer, price}) {
                         <p>{date}</p>
                     </div>     
                     <div className={"res_box"}>                            
-                        <img onClick = {() => RemoveReservation(id)}className={"btn_img"}src={crossedOutTrack}></img>
+                        <img alt={"crossedOutTrack"} onClick = {() => RemoveReservation(id)}className={"btn_img"}src={crossedOutTrack}></img>
                     </div>                        
                 </div>
             </div>     

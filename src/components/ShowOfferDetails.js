@@ -4,14 +4,14 @@ import crossedOutTrack from '../assets/pets.png';
 import checkTrack from '../assets/footprint.png';
 import NewReservation from './NewReservation';
 import RemoveReservation from './RemoveReservation';
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function ShowOfferDetails({ id, person, offer, date, price, details, email, phone}) {
 
     let parameters =  new URLSearchParams(useLocation().search);
     console.log(parameters)
     console.log(parameters.get('removable'))
-    let removable = parameters.get('removable') == 1
+    let removable = parameters.get('removable') === "1"
     console.log(removable)
     return (
      <div className={"offers_container"} id={id}>

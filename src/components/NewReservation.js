@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import {addReservation, SingleOffer} from "./Operations";
-// import ShowOfferDetails from './ShowOfferDetails';
+import {addReservation} from "./Operations";
 
 function hideOffer(id) {
     console.log(id)

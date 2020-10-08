@@ -38,10 +38,12 @@
             &:hover {
                 width: 55px;
                 height: 55px;
-                transition-delay: 0.25;
+                transition: 0.5s all ease-in-out;
             }
         }
         
     }
 
 }
+
+  

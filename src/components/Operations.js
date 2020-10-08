@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Advert from "./Offer";
-import Buttons from "./Buttons";
-import NewAdvert from "./NewAdvert";
 import Reservation from "./Reservation"
 import Offer from "./Offer";
 import ShowOfferDetails from "./ShowOfferDetails";
