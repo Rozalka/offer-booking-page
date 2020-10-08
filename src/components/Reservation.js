@@ -3,9 +3,10 @@ import Operations from "./Operations"
 import RemoveReservation from './RemoveReservation';
 import dog1 from '../assets/dog (1).png';
 import crossedOutTrack from '../assets/pets.png';
-function Reservation({id, person, email, date, offer, price}) {
+import { Link } from 'react-router-dom';
 
-    
+function Reservation({id, person, date, offer, price}) {
+
     return (
         <li className={"list"} id={id}>
         <div className="offer_box">
@@ -14,13 +15,13 @@ function Reservation({id, person, email, date, offer, price}) {
             </div> 
             <div className={"offer_single"}>
                 <div className={"offer_header"}>
-                    <h3> {offer} </h3>
+                    {/* <h3> {offer} </h3> */}
+                    <Link to={`details/${id}`}><h3> {offer} </h3></Link>
                     <p className={"price"}>{price} zł</p>
                 </div>
                 <div className={"offer_info"}>
                     <div className={"who_and_when"}>
                         <p className={"person"}> {person}</p>
-                        {/* <p> {email}</p> */}
                         <p>{date}</p>
                     </div>     
                     <div className={"res_box"}>                            

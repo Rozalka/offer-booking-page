@@ -121,7 +121,7 @@ export const getOffers = (condition='') => {
 
 function SingleOffer() {
   const { id } = useParams()
-  const [singleOffer, setSingleOffer] = useState(0);
+  const [singleOffer, setSingleOffer] = useState([]);
   useEffect(() => {
     fetchSingleOffer();
   },[]);
@@ -133,7 +133,9 @@ function SingleOffer() {
 
   return (
     <div>
-     <ShowOfferDetails key={singleOffer.id} {...singleOffer} />
+       {singleOffer.map((offer) => (
+        <ShowOfferDetails key={offer.id} {...offer} />
+      ))}
     </div>
   )
 }
@@ -149,7 +151,6 @@ function Offers() {
     availableOffers()
       .then((availableOffers) => setOffer(availableOffers));
   };
-
 
   return (
     <div className={"offers_container"}>

@@ -31,6 +31,10 @@
         margin-right: 20px;
         align-self: flex-start;
         }
+    .offer_details_img {
+        width: 200px;
+        height: 200px;
+    }    
     
     .offer_single {
         display: flex;
@@ -47,10 +51,18 @@
             align-items: flex-end;
         }
 
+        .offer_details {
+            margin-top: 20px;
+
+            h4 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+        }
+
         h3 {
             font-family: $font-paragraphs;
             font-size: 1.7rem;
-            // align-self: flex-start;
             &:hover {
                 color: $color-black;
                 cursor: pointer;

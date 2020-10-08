@@ -6,8 +6,7 @@ import checkTrack from '../assets/footprint.png';
 import { Link } from 'react-router-dom';
 import { getOffers, SingleOffer,MyReservations } from './Operations';
 
-function Offer({ id, person, offer, date, price, details, email, number}) {
-
+function Offer({ id, person, offer, date, price}) {
     return (
             <li className={"list"} id={id}>
                 <div className="offer_box">

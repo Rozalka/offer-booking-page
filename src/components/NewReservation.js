@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import {addReservation} from "./Operations";
+import {addReservation, SingleOffer} from "./Operations";
+import ShowOfferDetails from './ShowOfferDetails';
 
 function hideOffer(id) {
+    console.log(id)
     document.getElementById(`${id}`).innerHTML= "";
 }
 
