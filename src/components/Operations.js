@@ -23,7 +23,7 @@ export const addReservation = (reservation, callback) => {
     .catch((err) => console.log(err));
 };
 
-export const addOffer = (newOffer, callback) => {
+export const addOffer = (newOffer) => {
   let body = JSON.stringify(newOffer);
   return fetch(`http://localhost:3000/offers/`, {
     headers: {
@@ -113,7 +113,7 @@ function MyReservations() {
 }
 
 
-const getOffers = (condition='') => {
+export const getOffers = (condition='') => {
   return fetch(`http://localhost:3000/offers?${condition}`)
   .then((resp) => resp.json())
 }

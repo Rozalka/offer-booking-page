@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import {addOffer} from "./Operations";
 
 function NewAdvert({ onNewAdvert }) {
+  const [offer, setOffer] = useState("");
   const [person, setPerson] = useState("");
   const [email, setEmail] = useState("");
-  const [offer, setOffer] = useState("");
+  const [number, setTelNum] = useState("");
+  const [details, setDetails] = useState(""); 
   const [date, setDate] = useState("");
   const [price, setPrice] = useState("");
   const [errors, setErrors] = useState([]);
@@ -21,8 +23,8 @@ function NewAdvert({ onNewAdvert }) {
       _errors.push("Email should shoud have '@' to be valid.");
     }
   
-    if (offer.length < 10) {
-      _errors.push("Message should be at least 10 characters long.");
+    if (offer.length < 7) {
+      _errors.push("Message should be at least 7 characters long.");
     }
     if (isNaN(price)) {
       _errors.push("price should be a number")
@@ -35,21 +37,24 @@ function NewAdvert({ onNewAdvert }) {
     } 
 
     const advert = {
+      title: `${offer}`,
       person: `${person}`,
       email: `${email}`,
-      offer: `${offer}`,
+      number:`${number}`,
+      details: `${details}`,
       date: `${date}`,
       price: `${price}`
     };
 
      addOffer(advert, onNewAdvert) 
     .then(data => {
-        
+        setOffer("");
         setPerson("");
         setPrice("");
         setEmail("");
         setOffer("");
         setDate("");
+
         setSuccess(true);
     })
   };
@@ -61,9 +66,11 @@ function NewAdvert({ onNewAdvert }) {
         <h1 className={"new_offer"}>New Offer</h1>
         <form className={"form_container"} onSubmit={handleAddAdvert}>
           <div className="newAdvert_form">
+            <input className={"form_box"}type="text" name="title" placeholder="what is your offer" value={offer} onChange={(e) => setOffer(e.target.value)}/>
             <input className={"form_box"}type="text" name="person" placeholder="person" value={person} onChange={(e) => setPerson(e.target.value)}/>
             <input className={"form_box"}type="text" name="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <textarea className={"form_box textarea"}type="textarea" name="offer"placeholder="here write your offer" value={offer} onChange={(e) => setOffer(e.target.value)}/>
+            <input className={"form_box"}type="text" name="number" placeholder="tel.num" value={number} onChange={(e) => setTelNum(e.target.value)}/>
+            <textarea className={"form_box textarea"}type="textarea" name="offer"placeholder="here write details" value={details} onChange={(e) => setDetails(e.target.value)}/>
             <input className={"form_box"}type="date" name="date"placeholder="choose the date" value={date} onChange={(e) => setDate(e.target.value)}/>
             <input className={"form_box"}type="text" name="price"placeholder="price in zł" value={price} onChange={(e) => setPrice(e.target.value)}/>
           <button className={"form_btn"} type="submit">add new offer!</button>

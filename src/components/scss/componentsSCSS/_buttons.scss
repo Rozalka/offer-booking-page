@@ -1,13 +1,14 @@
 .nav_container {
     background-color: $color-mint;
-    
     display: flex;
     justify-content: space-between;
     width: 100vw;
     box-shadow: 0 0 5px $color-shadow;
+
     .nav_links {
         margin-right: 80px;
     }
+
     .home_page_link {
         margin-left: 80px;
         display: flex;
@@ -15,6 +16,7 @@
         display: flex;
         align-items: center;
     }
+    
     .main_btn {
         margin: 20px 5px;
         border: none;

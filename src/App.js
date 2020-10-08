@@ -8,6 +8,7 @@ import Reservation from "./components/Reservation";
 import Footer from "./components/Footer";
 import scss from "./components/scss/main.scss";
 import Offer from './components/Offer';
+import ShowOfferDetails from './components/ShowOfferDetails';
 import dog from "./assets/dog-outline-chasing-balloons.png"
 
 
@@ -19,13 +20,14 @@ function App() {
         <Buttons/>
         <Switch>
           <Route path="/" exact component={Home}/>
-          <Route path="/offer" exact component={Offer}>
+          <Route path="/offer">
           <Offers/>
           </Route>
+          <Route path="/details">
+          <ShowOfferDetails/>
+          </Route>
           <Route path="/newAdvert" component={NewAdvert}/>
-          <Route path="/reservations" component={Reservation}/>
           <MyReservations/>
-
         </Switch>
       </div>
       <Footer/>
