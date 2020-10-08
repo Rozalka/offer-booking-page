@@ -1,12 +1,8 @@
 {
   "reservations": [
     {
-      "offerId": 1,
-      "id": 1
-    },
-    {
-      "offerId": 1,
-      "id": 4
+      "offerId": 5,
+      "id": 6
     }
   ],
   "offers": [
@@ -59,6 +55,16 @@
       "price": "20",
       "id": 5,
       "details": "an offer addressed to owners of dogs with minor educational problems, we teach how to act to achieve the intended goal."
+    },
+    {
+      "title": "dpn",
+      "person": "rp",
+      "email": "roe@com",
+      "phone": "134210100",
+      "details": "details to confirm",
+      "date": "2020-10-16",
+      "price": "20",
+      "id": 6
     }
   ]
 }

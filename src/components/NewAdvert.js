@@ -23,11 +23,14 @@ function NewAdvert({ onNewAdvert }) {
       _errors.push("Email should shoud have '@' to be valid.");
     }
   
-    if (offer.length < 7) {
-      _errors.push("Message should be at least 7 characters long.");
+    if (offer.length < 3) {
+      _errors.push("Offer title should be at least 3 characters long.");
     }
     if (isNaN(price)) {
       _errors.push("price should be a number")
+    }
+    if (isNaN(phone) || phone.length < 9) {
+      _errors.push("phone should be a number and have 9 characters long.")
     }
     
     setErrors(_errors);

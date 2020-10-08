@@ -15,8 +15,7 @@ function Reservation({id, person, date, offer, price}) {
             </div> 
             <div className={"offer_single"}>
                 <div className={"offer_header"}>
-                    {/* <h3> {offer} </h3> */}
-                    <Link to={`details/${id}`}><h3> {offer} </h3></Link>
+                    <Link to={`details/${id}?removable=1`}><h3> {offer} </h3></Link>
                     <p className={"price"}>{price} zł</p>
                 </div>
                 <div className={"offer_info"}>

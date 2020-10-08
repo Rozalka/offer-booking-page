@@ -6,7 +6,6 @@ import Reservation from "./Reservation"
 import Offer from "./Offer";
 import ShowOfferDetails from "./ShowOfferDetails";
 import { useParams } from "react-router-dom";
-
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
   fetch(`http://localhost:3000/reservations/`, {
@@ -121,6 +120,7 @@ export const getOffers = (condition='') => {
 
 function SingleOffer() {
   const { id } = useParams()
+
   const [singleOffer, setSingleOffer] = useState([]);
   useEffect(() => {
     fetchSingleOffer();
