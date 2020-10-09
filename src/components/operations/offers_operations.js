@@ -3,7 +3,8 @@ import {allReservations} from '../Operations';
 import Offer from '../Offer';
 import ShowOfferDetails from '../ShowOfferDetails';
 import { useParams } from 'react-router-dom';
-import availableOffers from '../Operations';
+// import availableOffers from '../Operations';
+
 
 export const addOffer = (newOffer) => {
     let body = JSON.stringify(newOffer);
@@ -83,11 +84,11 @@ export const addOffer = (newOffer) => {
     );
   }
   
-//   async function  availableOffers() {
-//    let offers = await getOffers()
-//    let reservations = await allReservations()
-//    let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
-//    return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
-//    }
+  async function  availableOffers() {
+   let offers = await getOffers()
+   let reservations = await allReservations()
+   let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
+   return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
+   }
 
    export { SingleOffer, Offers };

@@ -76,7 +76,7 @@ export const removeReservation = (offerId, successCallback) => {
     .catch((err) => console.log(err))
 };
 
-const allReservations = () => {
+export const allReservations = () => {
   return fetch(`http://localhost:3000/reservations/`, {
     headers: {
       "Content-Type": "application/json",
@@ -160,12 +160,12 @@ function MyReservations() {
 //   );
 // }
 
-export default async function  availableOffers() {
- let offers = await getOffers()
- let reservations = await allReservations()
- let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
- return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
- }
+// export default async function  availableOffers() {
+//  let offers = await getOffers()
+//  let reservations = await allReservations()
+//  let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
+//  return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
+//  }
 
 
 export { MyReservations};
