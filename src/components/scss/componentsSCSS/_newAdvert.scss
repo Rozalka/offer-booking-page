@@ -1,11 +1,14 @@
 .form_main_container {
     min-height: calc(100vh - 160px);
+
     .new_offer {
         font-size: 3rem;
     }
+
     .form_container {
         margin-bottom: 50px;
     }
+
     .newAdvert_form {
         display: flex;
         flex-direction: column;
@@ -18,6 +21,7 @@
             border: none;
             box-shadow: 0 0 5px $color-shadow;
         }
+
         .textarea {
             resize: vertical;
         }
@@ -33,15 +37,12 @@
                 color: $color-on-hoover;
                 box-shadow: inset 0 0 3px $color-shadow;
             }
-   
         }
-
     }
 
     .form_confirmation {
         font-size: 2rem;
         font-family: $font-headers;
         color: $color-mint;
-
     }
 }
