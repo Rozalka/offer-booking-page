@@ -5,23 +5,23 @@ import Offer from './Offer';
 // import { useParams } from 'react-router-dom';
 import {getOffers} from './operations/offers_operations'
 
-export const addReservation = (reservation, callback) => {
-  let body = JSON.stringify(reservation);
-  fetch(`http://localhost:3000/reservations/`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-    body: body,
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      if (data.error === false && typeof callback === "function") {
-        callback(data.data);
-      }
-    })
-    .catch((err) => console.log(err));
-};
+// export const addReservation = (reservation, callback) => {
+//   let body = JSON.stringify(reservation);
+//   fetch(`http://localhost:3000/reservations/`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     method: "POST",
+//     body: body,
+//   })
+//     .then((r) => r.json())
+//     .then((data) => {
+//       if (data.error === false && typeof callback === "function") {
+//         callback(data.data);
+//       }
+//     })
+//     .catch((err) => console.log(err));
+// };
 
 // export const addOffer = (newOffer) => {
 //   let body = JSON.stringify(newOffer);

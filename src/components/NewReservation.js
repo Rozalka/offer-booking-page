@@ -1,4 +1,4 @@
-import {addReservation} from "./Operations";
+import {addReservation} from './operations/reservations_operations';
 
 function hideOffer(id) {
     console.log(id)

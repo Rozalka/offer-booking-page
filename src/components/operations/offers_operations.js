@@ -3,7 +3,6 @@ import {allReservations} from '../Operations';
 import Offer from '../Offer';
 import ShowOfferDetails from '../ShowOfferDetails';
 import { useParams } from 'react-router-dom';
-// import availableOffers from '../Operations';
 
 
 export const addOffer = (newOffer) => {
@@ -16,10 +15,9 @@ export const addOffer = (newOffer) => {
       body: body,
     })
       .then((r) => r.json())
-  };
-
+};
   
-  export const updateOffers = (id, newOffer, successCallback) => {
+export const updateOffers = (id, newOffer, successCallback) => {
     fetch(`http://localhost:3000/offers/${id}`, {
       headers: {
         "Content-Type": "application/json",
@@ -34,14 +32,14 @@ export const addOffer = (newOffer) => {
         }
       })
       .catch((err) => console.log(err));
-  };
+};
 
-  export const getOffers = (condition='') => {
+export const getOffers = (condition='') => {
     return fetch(`http://localhost:3000/offers?${condition}`)
     .then((resp) => resp.json())
-  }
+}
   
-  function SingleOffer() {
+function SingleOffer() {
     const { id } = useParams()
   
     const [singleOffer, setSingleOffer] = useState([]);
@@ -61,9 +59,9 @@ export const addOffer = (newOffer) => {
         ))}
       </div>
     )
-  }
+}
   
-  function Offers() {
+function Offers() {
     const [offers, setOffer] = useState([]);
   
     useEffect(() => {
@@ -82,7 +80,7 @@ export const addOffer = (newOffer) => {
         ))}
       </div>
     );
-  }
+}
   
   async function  availableOffers() {
    let offers = await getOffers()
