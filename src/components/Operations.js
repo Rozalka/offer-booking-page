@@ -4,7 +4,7 @@ import Reservation from './Reservation'
 // import ShowOfferDetails from './ShowOfferDetails';
 // import { useParams } from 'react-router-dom';
 import {getOffers} from './operations/offers_operations';
-import { findReservation } from './operations/reservations_operations';
+// import { findReservation } from './operations/reservations_operations';
 
 // export const addReservation = (reservation, callback) => {
 //   let body = JSON.stringify(reservation);
@@ -59,23 +59,23 @@ import { findReservation } from './operations/reservations_operations';
 //   .then((resp) => resp.json())
 // }
 
-export const removeReservation = (offerId, successCallback) => {
-  findReservation(`offerId=${offerId}`)
-  .then(reservations => reservations.map((reservation) => reservation.id))
-  .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "DELETE",
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      if (data.error === false && typeof successCallback === "function") {
-        successCallback();
-      }
-    }))
-    .catch((err) => console.log(err))
-};
+// export const removeReservation = (offerId, successCallback) => {
+//   findReservation(`offerId=${offerId}`)
+//   .then(reservations => reservations.map((reservation) => reservation.id))
+//   .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     method: "DELETE",
+//   })
+//     .then((r) => r.json())
+//     .then((data) => {
+//       if (data.error === false && typeof successCallback === "function") {
+//         successCallback();
+//       }
+//     }))
+//     .catch((err) => console.log(err))
+// };
 
 export const allReservations = () => {
   return fetch(`http://localhost:3000/reservations/`, {

@@ -22,4 +22,22 @@ export const addReservation = (reservation, callback) => {
 export const findReservation = (condition='') => {
     return fetch (`http://localhost:3000/reservations?${condition}`)
     .then((resp) => resp.json())
-  }   
+  }
+  
+export const removeReservation = (offerId, successCallback) => {
+    findReservation(`offerId=${offerId}`)
+    .then(reservations => reservations.map((reservation) => reservation.id))
+    .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.error === false && typeof successCallback === "function") {
+          successCallback();
+        }
+      }))
+      .catch((err) => console.log(err))
+  };  

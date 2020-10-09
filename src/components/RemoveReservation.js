@@ -1,5 +1,5 @@
 // import React from 'react'
-import { removeReservation } from './Operations'
+import { removeReservation } from './operations/reservations_operations';
 
 function hideReservation(reservationId) {
     document.getElementById(`${reservationId}`).innerHTML= "";
