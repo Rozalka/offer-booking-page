@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import dog from '../assets/dog-outline-chasing-balloons.png'
+import dog from '../assets/dog-outline-chasing-balloons.png';
+
 function Buttons() {
     return (
         
@@ -27,6 +28,6 @@ function Buttons() {
     )
 }
 
-export default Buttons
+export default Buttons;
 
 

@@ -29,12 +29,13 @@ export const findReservation = (condition='') => {
 export const removeReservation = (offerId, successCallback) => {
     findReservation(`offerId=${offerId}`)
     .then(reservations => reservations.map((reservation) => reservation.id))
-    .then(reservationId => fetch(`http://localhost:3000/reservations/${reservationId}`, {
+    .then(reservationIds => reservationIds.forEach(reservationId =>
+      fetch(`http://localhost:3000/reservations/${reservationId}`, {
       headers: {
         "Content-Type": "application/json",
       },
       method: "DELETE",
-    })
+    }))
       .then((r) => r.json())
       .then((data) => {
         if (data.error === false && typeof successCallback === "function") {
@@ -43,6 +44,24 @@ export const removeReservation = (offerId, successCallback) => {
       }))
       .catch((err) => console.log(err))
   };  
+
+function NewReservation(id) {
+    hideOffer(id);
+    addReservation({offerId: id});
+}
+
+function hideOffer(id) {
+    document.getElementById(`${id}`).innerHTML= "";
+}
+
+function hideReservation(reservationId) {
+  document.getElementById(`${reservationId}`).innerHTML= "";
+}
+
+  function RemoveReservation(reservationId) {
+    hideReservation(reservationId)
+    removeReservation(reservationId);
+}
 
   export const allReservations = () => {
     return fetch(`http://localhost:3000/reservations/`, {
@@ -78,4 +97,4 @@ export const removeReservation = (offerId, successCallback) => {
     );
   }
   
-  export default MyReservations;
+  export { MyReservations, RemoveReservation, NewReservation };

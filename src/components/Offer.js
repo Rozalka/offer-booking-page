@@ -1,5 +1,5 @@
 import React from 'react';
-import NewReservation from './NewReservation';
+import { NewReservation } from './operations/reservations_operations';
 import dog1 from '../assets/dog (1).png';
 import checkTrack from '../assets/footprint.png';
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ function Offer({ id, person, offer, date, price}) {
                     </div>     
                 </div>
             </li>
-    )
-}
+        )
+    }
 
-export default Offer
+export default Offer;

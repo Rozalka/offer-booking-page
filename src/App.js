@@ -1,14 +1,12 @@
 import React from 'react';
 import Buttons from './components/Buttons';
 import NewAdvert from './components/NewAdvert';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import  MyReservations from './components/operations/reservations_operations';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import  { MyReservations } from './components/operations/reservations_operations';
 import { SingleOffer, Offers } from './components/operations/offers_operations';
-import Footer from "./components/Footer";
-import  "./components/scss/main.scss";
-import dog from "./assets/dog-outline-chasing-balloons.png"
-
-
+import Footer from './components/Footer';
+import  './components/scss/main.scss';
+import dog from './assets/dog-outline-chasing-balloons.png';
 
 function App() {
   return (
@@ -29,7 +27,6 @@ function App() {
       </div>
       <Footer/>
     </Router>
-
   )
 }
 

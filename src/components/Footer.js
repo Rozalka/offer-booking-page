@@ -1,7 +1,7 @@
 import React from 'react'
-import insta from "../assets/instagram.png";
-import facebook from "../assets/facebook.png";
-import track from "../assets/track.png";
+import insta from '../assets/instagram.png';
+import facebook from '../assets/facebook.png';
+import track from '../assets/track.png';
 
 function Footer() {
     return (

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import {addOffer} from "./operations/offers_operations";
+import React, { useState } from 'react';
+import {addOffer} from './operations/offers_operations';
 
 function NewAdvert({ onNewAdvert }) {
   const [offer, setOffer] = useState("");
@@ -62,8 +62,6 @@ function NewAdvert({ onNewAdvert }) {
         setSuccess(true);
     })
   };
-
-
 
   return (
     <div className="main_container form_main_container">

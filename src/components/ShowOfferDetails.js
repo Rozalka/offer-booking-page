@@ -2,20 +2,16 @@ import React from 'react';
 import dog1 from '../assets/dog (1).png';
 import crossedOutTrack from '../assets/pets.png';
 import checkTrack from '../assets/footprint.png';
-import NewReservation from './NewReservation';
-import RemoveReservation from './RemoveReservation';
-import { useLocation } from "react-router-dom";
+import { RemoveReservation, NewReservation} from './operations/reservations_operations';
+import { useLocation } from 'react-router-dom';
 
 function ShowOfferDetails({ id, person, offer, date, price, details, email, phone}) {
 
     let parameters =  new URLSearchParams(useLocation().search);
-    console.log(parameters)
-    console.log(parameters.get('removable'))
     let removable = parameters.get('removable') === "1"
-    console.log(removable)
     return (
-     <div className={"offers_container"} id={id}>
-         <div className="offer_box">
+            <div className={"offers_container"} id={id}>
+                <div className="offer_box">
                     <div>
                         <img className={"offer_img offer_details_img"} alt={"dog"} src={dog1}></img>
                     </div> 
@@ -43,15 +39,13 @@ function ShowOfferDetails({ id, person, offer, date, price, details, email, phon
                             (
                                 <img alt={"track"} onClick = {() => NewReservation(id)}className={"btn_img"}src={checkTrack}></img>   
                             )
-
-                            }                          
-                                
+                            }                              
                             </div>                        
                         </div>
                     </div>     
                 </div>
-     </div>
-    )
-}
+            </div>
+        )
+    }
 
-export default ShowOfferDetails
+export default ShowOfferDetails;
