@@ -41,3 +41,13 @@ export const removeReservation = (offerId, successCallback) => {
       }))
       .catch((err) => console.log(err))
   };  
+
+  export const allReservations = () => {
+    return fetch(`http://localhost:3000/reservations/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .catch((err) => console.log(err));
+  };  

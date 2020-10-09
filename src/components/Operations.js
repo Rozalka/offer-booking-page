@@ -4,7 +4,7 @@ import Reservation from './Reservation'
 // import ShowOfferDetails from './ShowOfferDetails';
 // import { useParams } from 'react-router-dom';
 import {getOffers} from './operations/offers_operations';
-// import { findReservation } from './operations/reservations_operations';
+import { allReservations } from './operations/reservations_operations';
 
 // export const addReservation = (reservation, callback) => {
 //   let body = JSON.stringify(reservation);
@@ -77,15 +77,15 @@ import {getOffers} from './operations/offers_operations';
 //     .catch((err) => console.log(err))
 // };
 
-export const allReservations = () => {
-  return fetch(`http://localhost:3000/reservations/`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((r) => r.json())
-    .catch((err) => console.log(err));
-};
+// export const allReservations = () => {
+//   return fetch(`http://localhost:3000/reservations/`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((r) => r.json())
+//     .catch((err) => console.log(err));
+// };
 
 function MyReservations() {
   

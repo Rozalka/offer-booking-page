@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {allReservations} from '../Operations';
+import {allReservations} from './reservations_operations';
 import Offer from '../Offer';
 import ShowOfferDetails from '../ShowOfferDetails';
 import { useParams } from 'react-router-dom';
