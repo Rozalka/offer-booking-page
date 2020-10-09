@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {addOffer} from "./Operations";
+import {addOffer} from "./operations/offers_operations";
 
 function NewAdvert({ onNewAdvert }) {
   const [offer, setOffer] = useState("");

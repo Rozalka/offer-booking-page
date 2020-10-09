@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Reservation from "./Reservation"
-import Offer from "./Offer";
-import ShowOfferDetails from "./ShowOfferDetails";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Reservation from './Reservation'
+import Offer from './Offer';
+import ShowOfferDetails from './ShowOfferDetails';
+import { useParams } from 'react-router-dom';
+import {getOffers} from './operations/offers_operations'
+
 export const addReservation = (reservation, callback) => {
   let body = JSON.stringify(reservation);
   fetch(`http://localhost:3000/reservations/`, {
@@ -21,34 +23,34 @@ export const addReservation = (reservation, callback) => {
     .catch((err) => console.log(err));
 };
 
-export const addOffer = (newOffer) => {
-  let body = JSON.stringify(newOffer);
-  return fetch(`http://localhost:3000/offers/`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-    body: body,
-  })
-    .then((r) => r.json())
-};
+// export const addOffer = (newOffer) => {
+//   let body = JSON.stringify(newOffer);
+//   return fetch(`http://localhost:3000/offers/`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     method: "POST",
+//     body: body,
+//   })
+//     .then((r) => r.json())
+// };
 
-export const updateOffers = (id, newOffer, successCallback) => {
-  fetch(`http://localhost:3000/offers/${id}`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method: "PUT",
-    body: JSON.stringify(newOffer),
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      if (data.error === false && typeof successCallback === "function") {
-        successCallback(data.data);
-      }
-    })
-    .catch((err) => console.log(err));
-};
+// export const updateOffers = (id, newOffer, successCallback) => {
+//   fetch(`http://localhost:3000/offers/${id}`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     method: "PUT",
+//     body: JSON.stringify(newOffer),
+//   })
+//     .then((r) => r.json())
+//     .then((data) => {
+//       if (data.error === false && typeof successCallback === "function") {
+//         successCallback(data.data);
+//       }
+//     })
+//     .catch((err) => console.log(err));
+// };
 
 
 const findReservation = (condition='') => {
@@ -110,10 +112,10 @@ function MyReservations() {
   );
 }
 
-export const getOffers = (condition='') => {
-  return fetch(`http://localhost:3000/offers?${condition}`)
-  .then((resp) => resp.json())
-}
+// export const getOffers = (condition='') => {
+//   return fetch(`http://localhost:3000/offers?${condition}`)
+//   .then((resp) => resp.json())
+// }
 
 function SingleOffer() {
   const { id } = useParams()
@@ -166,4 +168,4 @@ async function  availableOffers() {
  }
 
 
-export { Offers, MyReservations, SingleOffer };
+export { MyReservations, Offers, SingleOffer };
