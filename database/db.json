@@ -1,10 +1,5 @@
 {
-  "reservations": [
-    {
-      "offerId": 2,
-      "id": 1
-    }
-  ],
+  "reservations": [],
   "offers": [
     {
       "id": 1,

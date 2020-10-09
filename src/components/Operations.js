@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Reservation from './Reservation'
+// import React, { useState, useEffect } from 'react';
+// import Reservation from './Reservation'
 // import Offer from './Offer';
 // import ShowOfferDetails from './ShowOfferDetails';
 // import { useParams } from 'react-router-dom';
-import {getOffers} from './operations/offers_operations';
-import { allReservations } from './operations/reservations_operations';
+// import {getOffers} from './operations/offers_operations';
+// import { allReservations } from './operations/reservations_operations';
 
 // export const addReservation = (reservation, callback) => {
 //   let body = JSON.stringify(reservation);
@@ -87,31 +87,29 @@ import { allReservations } from './operations/reservations_operations';
 //     .catch((err) => console.log(err));
 // };
 
-function MyReservations() {
+// function MyReservations() {
   
-  const [reservations, setReservations] = useState([]);
+//   const [reservations, setReservations] = useState([]);
 
-  useEffect(() => {
-    fetchAllReservations();
-  }, []);
+//   useEffect(() => {
+//     fetchAllReservations();
+//   }, []);
 
- const fetchAllReservations = () => {
-   allReservations()
-    .then(reservations => reservations.map((reservation) => reservation.offerId))
-    .then(offersIds => "id=" + offersIds.join("&id="))
-    .then(parsedOfferIds => getOffers(parsedOfferIds))
-    .then((reservedOffers) => setReservations(reservedOffers))
-    
-   
- }
-  return (
-      <div className={"offers_container"}>
-        {reservations.map((reservation) => (
-        <Reservation key={reservation.id} {...reservation} />
-        ))}
-      </div>
-  );
-}
+//  const fetchAllReservations = () => {
+//    allReservations()
+//     .then(reservations => reservations.map((reservation) => reservation.offerId))
+//     .then(offersIds => "id=" + offersIds.join("&id="))
+//     .then(parsedOfferIds => getOffers(parsedOfferIds))
+//     .then((reservedOffers) => setReservations(reservedOffers))   
+//  }
+//   return (
+//       <div className={"offers_container"}>
+//         {reservations.map((reservation) => (
+//         <Reservation key={reservation.id} {...reservation} />
+//         ))}
+//       </div>
+//   );
+// }
 
 // export const getOffers = (condition='') => {
 //   return fetch(`http://localhost:3000/offers?${condition}`)
@@ -169,4 +167,4 @@ function MyReservations() {
 //  }
 
 
-export { MyReservations};
+// export { MyReservations};

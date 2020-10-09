@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { getOffers } from './offers_operations';
+import Reservation from '../Reservation';
 
 
 export const addReservation = (reservation, callback) => {
@@ -50,4 +52,30 @@ export const removeReservation = (offerId, successCallback) => {
     })
       .then((r) => r.json())
       .catch((err) => console.log(err));
-  };  
+  };
+  
+  function MyReservations() {
+  
+    const [reservations, setReservations] = useState([]);
+  
+    useEffect(() => {
+      fetchAllReservations();
+    }, []);
+  
+   const fetchAllReservations = () => {
+     allReservations()
+      .then(reservations => reservations.map((reservation) => reservation.offerId))
+      .then(offersIds => "id=" + offersIds.join("&id="))
+      .then(parsedOfferIds => getOffers(parsedOfferIds))
+      .then((reservedOffers) => setReservations(reservedOffers))   
+   }
+    return (
+        <div className={"offers_container"}>
+          {reservations.map((reservation) => (
+          <Reservation key={reservation.id} {...reservation} />
+          ))}
+        </div>
+    );
+  }
+  
+  export default MyReservations;
