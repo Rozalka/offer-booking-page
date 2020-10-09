@@ -1,8 +1,8 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import {allReservations} from "./Reservations"
 // import Offer from "../Offer"
-// import ShowOfferDetails from "../ShowOfferDetails";
-// import { useParams } from "react-router-dom";
+import ShowOfferDetails from "../ShowOfferDetails";
+import { useParams } from "react-router-dom";
 
 export const addOffer = (newOffer) => {
     let body = JSON.stringify(newOffer);
@@ -39,27 +39,27 @@ export const addOffer = (newOffer) => {
     .then((resp) => resp.json())
   }
   
-//   function SingleOffer() {
-//     const { id } = useParams()
+  function SingleOffer() {
+    const { id } = useParams()
   
-//     const [singleOffer, setSingleOffer] = useState([]);
-//     useEffect(() => {
-//       fetchSingleOffer();
-//     },[]);
+    const [singleOffer, setSingleOffer] = useState([]);
+    useEffect(() => {
+      fetchSingleOffer();
+    },[]);
   
-//     const fetchSingleOffer =() => {
-//       getOffers(`id=${id}`)
-//       .then((getOffers) => setSingleOffer(getOffers));
-//     }
+    const fetchSingleOffer =() => {
+      getOffers(`id=${id}`)
+      .then((getOffers) => setSingleOffer(getOffers));
+    }
   
-//     return (
-//       <div>
-//          {singleOffer.map((offer) => (
-//           <ShowOfferDetails key={offer.id} {...offer} />
-//         ))}
-//       </div>
-//     )
-//   }
+    return (
+      <div>
+         {singleOffer.map((offer) => (
+          <ShowOfferDetails key={offer.id} {...offer} />
+        ))}
+      </div>
+    )
+  }
   
 //   function Offers() {
 //     const [offers, setOffer] = useState([]);
@@ -89,4 +89,4 @@ export const addOffer = (newOffer) => {
 //    return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
 //    }
 
-//    export {Offers, SingleOffer};
+   export {SingleOffer};
