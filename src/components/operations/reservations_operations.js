@@ -19,4 +19,7 @@ export const addReservation = (reservation, callback) => {
       .catch((err) => console.log(err));
   };
 
-  
+export const findReservation = (condition='') => {
+    return fetch (`http://localhost:3000/reservations?${condition}`)
+    .then((resp) => resp.json())
+  }   

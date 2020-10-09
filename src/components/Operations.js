@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Reservation from './Reservation'
-import Offer from './Offer';
+// import Offer from './Offer';
 // import ShowOfferDetails from './ShowOfferDetails';
 // import { useParams } from 'react-router-dom';
-import {getOffers} from './operations/offers_operations'
+import {getOffers} from './operations/offers_operations';
+import { findReservation } from './operations/reservations_operations';
 
 // export const addReservation = (reservation, callback) => {
 //   let body = JSON.stringify(reservation);
@@ -53,10 +54,10 @@ import {getOffers} from './operations/offers_operations'
 // };
 
 
-const findReservation = (condition='') => {
-  return fetch (`http://localhost:3000/reservations?${condition}`)
-  .then((resp) => resp.json())
-}
+// const findReservation = (condition='') => {
+//   return fetch (`http://localhost:3000/reservations?${condition}`)
+//   .then((resp) => resp.json())
+// }
 
 export const removeReservation = (offerId, successCallback) => {
   findReservation(`offerId=${offerId}`)
