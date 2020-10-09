@@ -139,28 +139,28 @@ function MyReservations() {
 //   )
 // }
 
-function Offers() {
-  const [offers, setOffer] = useState([]);
+// function Offers() {
+//   const [offers, setOffer] = useState([]);
 
-  useEffect(() => {
-    fetchAllOffers();
-  }, []);
+//   useEffect(() => {
+//     fetchAllOffers();
+//   }, []);
 
-  const fetchAllOffers = () => {
-    availableOffers()
-      .then((availableOffers) => setOffer(availableOffers));
-  };
+//   const fetchAllOffers = () => {
+//     availableOffers()
+//       .then((availableOffers) => setOffer(availableOffers));
+//   };
 
-  return (
-    <div className={"offers_container"}>
-      {offers.map((offer) => (
-        <Offer key={offer.id} {...offer} />
-      ))}
-    </div>
-  );
-}
+//   return (
+//     <div className={"offers_container"}>
+//       {offers.map((offer) => (
+//         <Offer key={offer.id} {...offer} />
+//       ))}
+//     </div>
+//   );
+// }
 
-async function  availableOffers() {
+export default async function  availableOffers() {
  let offers = await getOffers()
  let reservations = await allReservations()
  let reservedOffersIds = reservations.map((reservation) => reservation.offerId);
@@ -168,4 +168,4 @@ async function  availableOffers() {
  }
 
 
-export { MyReservations, Offers};
+export { MyReservations};

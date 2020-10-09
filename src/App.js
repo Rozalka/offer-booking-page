@@ -2,8 +2,8 @@ import React from 'react';
 import Buttons from './components/Buttons';
 import NewAdvert from './components/NewAdvert';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { MyReservations, Offers } from './components/Operations';
-import { SingleOffer } from './components/operations/offers_operations';
+import { MyReservations } from './components/Operations';
+import { SingleOffer, Offers } from './components/operations/offers_operations';
 import Footer from "./components/Footer";
 import  "./components/scss/main.scss";
 import dog from "./assets/dog-outline-chasing-balloons.png"

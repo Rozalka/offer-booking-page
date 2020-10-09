@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-// import {allReservations} from "./Reservations"
-// import Offer from "../Offer"
-import ShowOfferDetails from "../ShowOfferDetails";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import {allReservations} from '../Operations';
+import Offer from '../Offer';
+import ShowOfferDetails from '../ShowOfferDetails';
+import { useParams } from 'react-router-dom';
+import availableOffers from '../Operations';
 
 export const addOffer = (newOffer) => {
     let body = JSON.stringify(newOffer);
@@ -61,26 +62,26 @@ export const addOffer = (newOffer) => {
     )
   }
   
-//   function Offers() {
-//     const [offers, setOffer] = useState([]);
+  function Offers() {
+    const [offers, setOffer] = useState([]);
   
-//     useEffect(() => {
-//       fetchAllOffers();
-//     }, []);
+    useEffect(() => {
+      fetchAllOffers();
+    }, []);
   
-//     const fetchAllOffers = () => {
-//       availableOffers()
-//         .then((availableOffers) => setOffer(availableOffers));
-//     };
+    const fetchAllOffers = () => {
+      availableOffers()
+        .then((availableOffers) => setOffer(availableOffers));
+    };
   
-//     return (
-//       <div className={"offers_container"}>
-//         {offers.map((offer) => (
-//           <Offer key={offer.id} {...offer} />
-//         ))}
-//       </div>
-//     );
-//   }
+    return (
+      <div className={"offers_container"}>
+        {offers.map((offer) => (
+          <Offer key={offer.id} {...offer} />
+        ))}
+      </div>
+    );
+  }
   
 //   async function  availableOffers() {
 //    let offers = await getOffers()
@@ -89,4 +90,4 @@ export const addOffer = (newOffer) => {
 //    return offers.filter((offer) => !reservedOffersIds.includes(offer.id))
 //    }
 
-   export {SingleOffer};
+   export { SingleOffer, Offers };
